@@ -470,6 +470,78 @@ const en = {
     "You’re not just paying for a tool — you’re getting the platform plus 8 dedicated human agents.",
   "human.final.eyebrow": "READY TO BUILD THE TEAM?",
   "human.final.title": "One team. One system. One growth direction.",
+  "human.role.seo": "SEO Specialist",
+  "human.role.designer": "Designer",
+  "human.role.video": "Video Editor",
+  "human.role.social": "Social Media Manager",
+  "human.role.crmExpert": "CRM Expert",
+  "human.role.data": "Data & Research Support",
+  "human.role.ads": "Digital Advertising Specialist",
+  "human.role.designFull": "Graphic Designer",
+  "human.role.dataAdmin": "Data & Admin Support",
+  "human.growth.item1.t": "Strategy & funnel ownership",
+  "human.growth.item1.d":
+    "Customer journey, offers, campaigns and priorities.",
+  "human.growth.item2.t": "Performance marketing",
+  "human.growth.item2.d":
+    "Campaign setup, optimization and acquisition support.",
+  "human.growth.item3.t": "Creative & content",
+  "human.growth.item3.d":
+    "Ad creative, landing page content and campaign assets.",
+  "human.growth.item4.t": "CRM & sales support",
+  "human.growth.item4.d":
+    "Pipeline hygiene, follow-up processes and appointment workflows.",
+  "human.growth.item5.t": "Analytics & improvement",
+  "human.growth.item5.d":
+    "See what is working, where leads stall and what to improve next.",
+  "human.member.1.t": "Digital Advertising Specialist",
+  "human.member.1.d":
+    "Manages Meta, Google, TikTok and YouTube campaigns, including targeting, tracking and optimization.",
+  "human.member.2.d":
+    "Builds funnels, pipelines, automations, routing and integrations.",
+  "human.member.3.t": "Graphic Designer",
+  "human.member.3.d":
+    "Creates ad creatives, social assets, landing pages and brand visuals.",
+  "human.member.4.t": "Video Editor",
+  "human.member.4.d": "Produces Reels, Shorts, VSLs and motion content.",
+  "human.member.5.t": "SEO Specialist",
+  "human.member.5.d":
+    "Improves technical SEO, on-page SEO, local visibility and backlinks.",
+  "human.member.6.d":
+    "Works with AI agents to move qualified leads toward meetings.",
+  "human.member.7.t": "Social Media Manager",
+  "human.member.7.d": "Plans content, publishing and community engagement.",
+  "human.member.8.t": "Data & Research Assistant",
+  "human.member.8.d":
+    "Supports research, CRM hygiene, data management and campaign operations.",
+  "human.plan.starter.1": "Sales & Marketing OS",
+  "human.plan.starter.2": "Growth Manager",
+  "human.plan.starter.3": "Performance Marketing",
+  "human.plan.starter.4": "Design Support",
+  "human.plan.starter.5": "CRM & Automation",
+  "human.plan.starter.6": "Monthly Optimization",
+  "human.plan.pro.1": "Everything in Starter + Human Agents",
+  "human.plan.pro.2": "SEO Specialist",
+  "human.plan.pro.3": "Video Editing",
+  "human.plan.pro.4": "Social Media Management",
+  "human.plan.pro.5": "Appointment Support",
+  "human.plan.pro.6": "Advanced Reporting",
+  "human.plan.elite.1": "Everything in Pro + Human Agents",
+  "human.plan.elite.2": "Higher Creative Capacity",
+  "human.plan.elite.3": "AI Agents",
+  "human.plan.elite.4": "Data & Research Support",
+  "human.plan.elite.5": "Advanced Automation",
+  "human.plan.elite.6": "Priority Growth Management",
+  "human.plan.level.starter": "Essential Team",
+  "human.plan.level.pro": "Full Growth Team",
+  "human.plan.level.elite": "Scale Team",
+  "human.plan.tier.starter": "STARTER + HUMAN AGENTS",
+  "human.plan.tier.pro": "PRO + HUMAN AGENTS",
+  "human.plan.tier.elite": "ELITE + HUMAN AGENTS",
+  "human.flow.lead": "Lead",
+  "human.flow.ai": "AI",
+  "human.flow.human": "Human Agent",
+  "human.flow.customer": "Customer",
 } as const;
 
 export type MessageKey = keyof typeof en;
@@ -839,7 +911,7 @@ const ar: Record<MessageKey, string> = {
   "human.spot.lead":
     "أضف متخصصين حول نظام المبيعات والتسويق دون بناء قسم داخلي كامل.",
   "human.spot.meet": "تعرّف على الفريق",
-  "human.spot.viewPlans": "عرض خطط الوكلاء البشريين ←",
+  "human.spot.viewPlans": "عرض خطط الوكلاء البشريين",
   "human.spot.active": "وكيل بشري نشط",
   "human.spot.live": "مباشر مع نظامك",
   "human.role.growth": "مدير النمو",
@@ -905,13 +977,13 @@ const ar: Record<MessageKey, string> = {
     "الذكاء الاصطناعي يتولى الحجم. والوكلاء البشريون يتولون الحكم.",
   "human.handoff.copy":
     "إدارة عملاء واحدة. سجل عميل واحد. بلا تسليمات منفصلة.",
-  "human.handoff.cta": "تعرّف على الفريق ←",
+  "human.handoff.cta": "تعرّف على الفريق",
   "human.growth.eyebrow": "فريق النمو",
   "human.growth.title":
     "ادعم منصتك بأشخاص يفهمون مسار التحويل بالكامل.",
   "human.growth.lead":
     "أضف طبقة تنفيذ مُدارة حول نظام المبيعات والتسويق عندما تحتاج استراتيجية أو حملات أو إبداعاً أو إشرافاً على إدارة العملاء أو دعم مبيعات — دون تقسيم الملكية عبر مزودين منفصلين.",
-  "human.growth.meet": "تعرّف على الفريق ←",
+  "human.growth.meet": "تعرّف على الفريق",
   "human.team.eyebrow": "تعرّف على الفريق",
   "human.team.title": "المتخصصون خلف نموك.",
   "human.plans.eyebrow": "الخطط",
@@ -920,6 +992,78 @@ const ar: Record<MessageKey, string> = {
     "أنت لا تدفع فقط مقابل أداة — بل تحصل على المنصة بالإضافة إلى 8 وكلاء بشريين مخصصين.",
   "human.final.eyebrow": "جاهز لبناء الفريق؟",
   "human.final.title": "فريق واحد. نظام واحد. اتجاه نمو واحد.",
+  "human.role.seo": "أخصائي تحسين محركات البحث",
+  "human.role.designer": "مصمم",
+  "human.role.video": "محرر فيديو",
+  "human.role.social": "مدير وسائل التواصل",
+  "human.role.crmExpert": "خبير إدارة العملاء",
+  "human.role.data": "دعم البيانات والبحوث",
+  "human.role.ads": "أخصائي الإعلانات الرقمية",
+  "human.role.designFull": "مصمم جرافيك",
+  "human.role.dataAdmin": "دعم البيانات والإدارة",
+  "human.growth.item1.t": "ملكية الاستراتيجية والقمع",
+  "human.growth.item1.d":
+    "رحلة العميل والعروض والحملات والأولويات.",
+  "human.growth.item2.t": "التسويق بالأداء",
+  "human.growth.item2.d":
+    "إعداد الحملات والتحسين ودعم الاستحواذ.",
+  "human.growth.item3.t": "الإبداع والمحتوى",
+  "human.growth.item3.d":
+    "إبداعات الإعلانات ومحتوى صفحات الهبوط وأصول الحملات.",
+  "human.growth.item4.t": "إدارة العملاء ودعم المبيعات",
+  "human.growth.item4.d":
+    "نظافة خط المبيعات ومتابعة العمليات وسير عمل المواعيد.",
+  "human.growth.item5.t": "التحليلات والتحسين",
+  "human.growth.item5.d":
+    "اعرف ما يعمل، وأين تتوقف العملاء المحتملون، وما الذي يجب تحسينه لاحقاً.",
+  "human.member.1.t": "أخصائي الإعلانات الرقمية",
+  "human.member.1.d":
+    "يدير حملات Meta وGoogle وTikTok وYouTube بما في ذلك الاستهداف والتتبع والتحسين.",
+  "human.member.2.d":
+    "يبني القنوات وخطوط المبيعات والأتمتة والتوجيه والتكاملات.",
+  "human.member.3.t": "مصمم جرافيك",
+  "human.member.3.d":
+    "ينشئ إبداعات الإعلانات وأصول السوشيال وصفحات الهبوط والمرئيات.",
+  "human.member.4.t": "محرر فيديو",
+  "human.member.4.d": "ينتج Reels وShorts وVSLs ومحتوى الحركة.",
+  "human.member.5.t": "أخصائي تحسين محركات البحث",
+  "human.member.5.d":
+    "يحسّن السيو التقني وعلى الصفحة والظهور المحلي والروابط الخلفية.",
+  "human.member.6.d":
+    "يعمل مع وكلاء الذكاء الاصطناعي لتحريك العملاء المؤهلين نحو الاجتماعات.",
+  "human.member.7.t": "مدير وسائل التواصل",
+  "human.member.7.d": "يخطّط المحتوى والنشر وتفاعل المجتمع.",
+  "human.member.8.t": "مساعد البيانات والبحوث",
+  "human.member.8.d":
+    "يدعم البحوث ونظافة إدارة العملاء وإدارة البيانات وعمليات الحملات.",
+  "human.plan.starter.1": "نظام المبيعات والتسويق",
+  "human.plan.starter.2": "مدير النمو",
+  "human.plan.starter.3": "التسويق بالأداء",
+  "human.plan.starter.4": "دعم التصميم",
+  "human.plan.starter.5": "إدارة العملاء والأتمتة",
+  "human.plan.starter.6": "تحسين شهري",
+  "human.plan.pro.1": "كل ما في Starter + الوكلاء البشريون",
+  "human.plan.pro.2": "أخصائي تحسين محركات البحث",
+  "human.plan.pro.3": "تحرير الفيديو",
+  "human.plan.pro.4": "إدارة وسائل التواصل",
+  "human.plan.pro.5": "دعم المواعيد",
+  "human.plan.pro.6": "تقارير متقدمة",
+  "human.plan.elite.1": "كل ما في Pro + الوكلاء البشريون",
+  "human.plan.elite.2": "سعة إبداعية أعلى",
+  "human.plan.elite.3": "وكلاء الذكاء الاصطناعي",
+  "human.plan.elite.4": "دعم البيانات والبحوث",
+  "human.plan.elite.5": "أتمتة متقدمة",
+  "human.plan.elite.6": "إدارة نمو ذات أولوية",
+  "human.plan.level.starter": "فريق أساسي",
+  "human.plan.level.pro": "فريق نمو كامل",
+  "human.plan.level.elite": "فريق توسّع",
+  "human.plan.tier.starter": "المبتدئ + الوكلاء البشريون",
+  "human.plan.tier.pro": "الاحترافي + الوكلاء البشريون",
+  "human.plan.tier.elite": "النخبة + الوكلاء البشريون",
+  "human.flow.lead": "عميل محتمل",
+  "human.flow.ai": "ذكاء اصطناعي",
+  "human.flow.human": "وكيل بشري",
+  "human.flow.customer": "عميل",
 };
 
 export const messages: Record<Locale, Record<MessageKey, string>> = {

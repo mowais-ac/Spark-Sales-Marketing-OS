@@ -2,16 +2,62 @@
 
 import { useMemo, useState } from "react";
 import { useLanguage } from "@/components/LanguageContext";
+import type { MessageKey } from "@/lib/i18n/messages";
 
-const roles = [
-  { id: "ads", title: "Digital Advertising Specialist", salary: 7000, label: "AED 7.0K" },
-  { id: "seo", title: "SEO Specialist", salary: 4100, label: "AED 4.1K" },
-  { id: "design", title: "Graphic Designer", salary: 3900, label: "AED 3.9K" },
-  { id: "video", title: "Video Editor", salary: 4000, label: "AED 4.0K" },
-  { id: "social", title: "Social Media Manager", salary: 3800, label: "AED 3.8K" },
-  { id: "crm", title: "CRM Expert", salary: 9700, label: "AED 9.7K" },
-  { id: "appointments", title: "Appointment Setter", salary: 5100, label: "AED 5.1K" },
-  { id: "data", title: "Data & Admin Support", salary: 3100, label: "AED 3.1K" },
+const roles: {
+  id: string;
+  titleKey: MessageKey;
+  salary: number;
+  label: string;
+}[] = [
+  {
+    id: "ads",
+    titleKey: "human.role.ads",
+    salary: 7000,
+    label: "AED 7.0K",
+  },
+  {
+    id: "seo",
+    titleKey: "human.role.seo",
+    salary: 4100,
+    label: "AED 4.1K",
+  },
+  {
+    id: "design",
+    titleKey: "human.role.designFull",
+    salary: 3900,
+    label: "AED 3.9K",
+  },
+  {
+    id: "video",
+    titleKey: "human.role.video",
+    salary: 4000,
+    label: "AED 4.0K",
+  },
+  {
+    id: "social",
+    titleKey: "human.role.social",
+    salary: 3800,
+    label: "AED 3.8K",
+  },
+  {
+    id: "crm",
+    titleKey: "human.role.crmExpert",
+    salary: 9700,
+    label: "AED 9.7K",
+  },
+  {
+    id: "appointments",
+    titleKey: "human.role.appointments.t",
+    salary: 5100,
+    label: "AED 5.1K",
+  },
+  {
+    id: "data",
+    titleKey: "human.role.dataAdmin",
+    salary: 3100,
+    label: "AED 3.1K",
+  },
 ];
 
 export function HiringCalculator() {
@@ -31,8 +77,9 @@ export function HiringCalculator() {
     else if (count >= 3) labelKey = "human.hire.medium";
     return {
       count,
-      peopleLabel: `${count} ${count === 1 ? t("human.hire.person") : t("human.hire.people")
-        }`,
+      peopleLabel: `${count} ${
+        count === 1 ? t("human.hire.person") : t("human.hire.people")
+      }`,
       payroll: count
         ? `≈ AED ${(total / 1000).toFixed(1)}K ${t("home.plan.month")}`
         : `AED 0 ${t("home.plan.month")}`,
@@ -59,8 +106,6 @@ export function HiringCalculator() {
             <h2 className="h2">{t("human.hire.title")}</h2>
             <p className="section-lead">{t("human.hire.lead")}</p>
           </div>
-
-
         </div>
 
         <div className="hiring-stress-grid">
@@ -76,7 +121,9 @@ export function HiringCalculator() {
                 return (
                   <button
                     key={role.id}
-                    className={`salary-role-card hiring-role${active ? " active" : ""}`}
+                    className={`salary-role-card hiring-role${
+                      active ? " active" : ""
+                    }`}
                     type="button"
                     aria-pressed={active}
                     onClick={() => toggle(role.id)}
@@ -85,45 +132,18 @@ export function HiringCalculator() {
                       <i className="fa-solid fa-user" aria-hidden="true" />
                     </span>
                     <div>
-                      <strong>{role.title}</strong>
+                      <strong dir="auto">{t(role.titleKey)}</strong>
                     </div>
-                    <b>{role.label}</b>
+                    <b className="ltr-safe">{role.label}</b>
                   </button>
                 );
               })}
             </div>
 
-            {/* <div className="hiring-stress-meter">
-              <div className="hiring-meter-head">
-                <span>{t("human.hire.mgmt")}</span>
-                <b>{t(stats.labelKey)}</b>
-              </div>
-              <div className="hiring-meter-track">
-                <i style={{ width: `${stats.pct}%` }} />
-              </div>
-              <div className="hiring-stress-tags">
-                <span>
-                  <i className="fa-solid fa-user-plus" /> {t("human.hire.recruit")}{" "}
-                  <b>{stats.count}</b>
-                </span>
-                <span>
-                  <i className="fa-solid fa-clipboard-check" /> {t("human.hire.onboard")}{" "}
-                  <b>{stats.count}</b>
-                </span>
-                <span>
-                  <i className="fa-solid fa-calendar-days" /> {t("human.hire.coordinate")}{" "}
-                  <b>{stats.count}</b>
-                </span>
-                <span>
-                  <i className="fa-solid fa-wallet" /> {t("human.hire.pay")}{" "}
-                  <b>{stats.count}</b>
-                </span>
-              </div>
-            </div> */}
             <div className="hiring-live-card" aria-live="polite">
               <span>{t("human.hire.load")}</span>
-              <strong>{stats.peopleLabel}</strong>
-              <b>{stats.payroll}</b>
+              <strong dir="auto">{stats.peopleLabel}</strong>
+              <b className="ltr-safe">{stats.payroll}</b>
             </div>
           </div>
 
@@ -154,14 +174,14 @@ export function HiringCalculator() {
             </h3>
             <div className="easy-price">
               <small>{t("human.hire.from")}</small>
-              <strong>AED 5K</strong>
+              <strong className="ltr-safe">AED 5K</strong>
               <span>{t("home.plan.month")}</span>
             </div>
             <ul>
-              <li>{t("human.hire.easy.1")}</li>
-              <li>{t("human.hire.easy.2")}</li>
-              <li>{t("human.hire.easy.3")}</li>
-              <li>{t("human.hire.easy.4")}</li>
+              <li dir="auto">{t("human.hire.easy.1")}</li>
+              <li dir="auto">{t("human.hire.easy.2")}</li>
+              <li dir="auto">{t("human.hire.easy.3")}</li>
+              <li dir="auto">{t("human.hire.easy.4")}</li>
             </ul>
             <a className="btn btn-primary" href="#plans">
               {t("human.hire.seePlans")}
@@ -169,7 +189,9 @@ export function HiringCalculator() {
           </aside>
         </div>
 
-        <p className="salary-source-note">{t("human.hire.note")}</p>
+        <p className="salary-source-note" dir="auto">
+          {t("human.hire.note")}
+        </p>
       </div>
     </section>
   );

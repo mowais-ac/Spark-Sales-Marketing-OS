@@ -3,7 +3,6 @@
 import { PageShell } from "@/components/PageShell";
 import { OpenConsultationButton } from "@/components/OpenConsultationButton"; 
 import { HiringCalculator } from "@/components/human-agents/HiringCalculator";
-import { HumanRoleSpotlight } from "@/components/human-agents/HumanRoleSpotlight";
 import { useLanguage } from "@/components/LanguageContext";
 
 export function HumanAgentsPageContent() {
@@ -44,15 +43,6 @@ function HumanAgentsMain() {
         </div>
       </section>
 
-      {/* <section
-        className="human-spotlight section-space"
-        aria-labelledby="humanSpotlightTitle"
-      >
-        <div className="container">
-          <HumanRoleSpotlight />
-        </div>
-      </section> */}
-
       <HiringCalculator />
 
       <section className="section dark growth-infra-section">
@@ -62,57 +52,53 @@ function HumanAgentsMain() {
           <div className="growth-stack">
             <div className="growth-core-card">
               <span>SPARK AI</span>
-              <strong>
-                AI + HUMAN
-                <br />
-                GROWTH TEAM
-              </strong>
-              <small>{t("human.infra.sub")}</small>
+              <strong dir="auto">{t("human.infra.core")}</strong>
+              <small dir="auto">{t("human.infra.sub")}</small>
             </div>
             <div className="growth-role-grid">
               <div>
                 <b>01</b>
-                <span>{t("footer.salesOs")}</span>
+                <span dir="auto">{t("footer.salesOs")}</span>
               </div>
               <div>
                 <b>02</b>
-                <span>{t("footer.aiAgent")}</span>
+                <span dir="auto">{t("footer.aiAgent")}</span>
               </div>
               <div>
                 <b>03</b>
-                <span>{t("human.role.growth")}</span>
+                <span dir="auto">{t("human.role.growth")}</span>
               </div>
               <div>
                 <b>04</b>
-                <span>{t("human.role.performance.t")}</span>
+                <span dir="auto">{t("human.role.performance.t")}</span>
               </div>
               <div>
                 <b>05</b>
-                <span>SEO Specialist</span>
+                <span dir="auto">{t("human.role.seo")}</span>
               </div>
               <div>
                 <b>06</b>
-                <span>Designer</span>
+                <span dir="auto">{t("human.role.designer")}</span>
               </div>
               <div>
                 <b>07</b>
-                <span>Video Editor</span>
+                <span dir="auto">{t("human.role.video")}</span>
               </div>
               <div>
                 <b>08</b>
-                <span>Social Media Manager</span>
+                <span dir="auto">{t("human.role.social")}</span>
               </div>
               <div>
                 <b>09</b>
-                <span>{t("human.role.appointments.t")}</span>
+                <span dir="auto">{t("human.role.appointments.t")}</span>
               </div>
               <div>
                 <b>10</b>
-                <span>CRM Expert</span>
+                <span dir="auto">{t("human.role.crmExpert")}</span>
               </div>
               <div>
                 <b>11</b>
-                <span>Data & Research Support</span>
+                <span dir="auto">{t("human.role.data")}</span>
               </div>
             </div>
           </div>
@@ -128,12 +114,14 @@ function HumanAgentsMain() {
               <br />
               {t("aiHuman.title.2")}
             </h2>
-            <p>{t("aiHuman.lead")}</p>
+            <p dir="auto">{t("aiHuman.lead")}</p>
           </div>
           <div className="ai-human-grid">
             <article>
-              <h3>{t("aiHuman.ai")}</h3>
-              <div className="chips">
+              <h3 className="ai-human-title" dir="auto">
+                {t("aiHuman.ai")}
+              </h3>
+              <div className="chips ltr-safe">
                 <span>Research</span>
                 <span>Drafting</span>
                 <span>Lead scoring</span>
@@ -147,8 +135,10 @@ function HumanAgentsMain() {
               </div>
             </article>
             <article className="human-card">
-              <h3>{t("aiHuman.human")}</h3>
-              <div className="chips">
+              <h3 className="ai-human-title" dir="auto">
+                {t("aiHuman.human")}
+              </h3>
+              <div className="chips ltr-safe">
                 <span>Strategy</span>
                 <span>Creative direction</span>
                 <span>Media buying</span>
@@ -174,17 +164,17 @@ function HumanAgentsMain() {
           >
             <div className="handoff-promo-copy">
               <span className="eyebrow">{t("human.handoff.eyebrow")}</span>
-              <h3>{t("human.handoff.title")}</h3>
-              <p>{t("human.handoff.copy")}</p>
+              <h3 dir="auto">{t("human.handoff.title")}</h3>
+              <p dir="auto">{t("human.handoff.copy")}</p>
             </div>
             <div className="handoff-promo-flow" aria-hidden="true">
-              <span>Lead</span>
+              <span>{t("human.flow.lead")}</span>
               <i>→</i>
-              <span>AI</span>
+              <span>{t("human.flow.ai")}</span>
               <i>→</i>
-              <span className="human-node">Human Agent</span>
+              <span className="human-node">{t("human.flow.human")}</span>
               <i>→</i>
-              <span>Customer</span>
+              <span>{t("human.flow.customer")}</span>
             </div>
             <b>{t("human.handoff.cta")}</b>
           </a>
@@ -196,35 +186,33 @@ function HumanAgentsMain() {
           <div>
             <div className="eyebrow light">{t("human.growth.eyebrow")}</div>
             <h2>{t("human.growth.title")}</h2>
-            <p className="section-lead light-copy">{t("human.growth.lead")}</p>
+            <p className="section-lead light-copy" dir="auto">
+              {t("human.growth.lead")}
+            </p>
             <a className="text-link light-link" href="#team">
               {t("human.growth.meet")}
             </a>
           </div>
           <div className="team-list">
             <div>
-              <strong>Strategy &amp; funnel ownership</strong>
-              <span>Customer journey, offers, campaigns and priorities.</span>
+              <strong dir="auto">{t("human.growth.item1.t")}</strong>
+              <span dir="auto">{t("human.growth.item1.d")}</span>
             </div>
             <div>
-              <strong>Performance marketing</strong>
-              <span>Campaign setup, optimization and acquisition support.</span>
+              <strong dir="auto">{t("human.growth.item2.t")}</strong>
+              <span dir="auto">{t("human.growth.item2.d")}</span>
             </div>
             <div>
-              <strong>Creative &amp; content</strong>
-              <span>Ad creative, landing page content and campaign assets.</span>
+              <strong dir="auto">{t("human.growth.item3.t")}</strong>
+              <span dir="auto">{t("human.growth.item3.d")}</span>
             </div>
             <div>
-              <strong>CRM &amp; sales support</strong>
-              <span>
-                Pipeline hygiene, follow-up processes and appointment workflows.
-              </span>
+              <strong dir="auto">{t("human.growth.item4.t")}</strong>
+              <span dir="auto">{t("human.growth.item4.d")}</span>
             </div>
             <div>
-              <strong>Analytics &amp; improvement</strong>
-              <span>
-                See what is working, where leads stall and what to improve next.
-              </span>
+              <strong dir="auto">{t("human.growth.item5.t")}</strong>
+              <span dir="auto">{t("human.growth.item5.d")}</span>
             </div>
           </div>
         </div>
@@ -237,59 +225,43 @@ function HumanAgentsMain() {
           <div className="team-grid">
             <article>
               <b>01</b>
-              <h3>Digital Advertising Specialist</h3>
-              <p>
-                Manages Meta, Google, TikTok and YouTube campaigns, including
-                targeting, tracking and optimization.
-              </p>
+              <h3 dir="auto">{t("human.member.1.t")}</h3>
+              <p dir="auto">{t("human.member.1.d")}</p>
             </article>
             <article>
               <b>02</b>
-              <h3>{t("human.role.crm.t")}</h3>
-              <p>
-                Builds funnels, pipelines, automations, routing and integrations.
-              </p>
+              <h3 dir="auto">{t("human.role.crm.t")}</h3>
+              <p dir="auto">{t("human.member.2.d")}</p>
             </article>
             <article>
               <b>03</b>
-              <h3>Graphic Designer</h3>
-              <p>
-                Creates ad creatives, social assets, landing pages and brand
-                visuals.
-              </p>
+              <h3 dir="auto">{t("human.member.3.t")}</h3>
+              <p dir="auto">{t("human.member.3.d")}</p>
             </article>
             <article>
               <b>04</b>
-              <h3>Video Editor</h3>
-              <p>Produces Reels, Shorts, VSLs and motion content.</p>
+              <h3 dir="auto">{t("human.member.4.t")}</h3>
+              <p dir="auto">{t("human.member.4.d")}</p>
             </article>
             <article>
               <b>05</b>
-              <h3>SEO Specialist</h3>
-              <p>
-                Improves technical SEO, on-page SEO, local visibility and
-                backlinks.
-              </p>
+              <h3 dir="auto">{t("human.member.5.t")}</h3>
+              <p dir="auto">{t("human.member.5.d")}</p>
             </article>
             <article>
               <b>06</b>
-              <h3>{t("human.role.appointments.t")}</h3>
-              <p>
-                Works with AI agents to move qualified leads toward meetings.
-              </p>
+              <h3 dir="auto">{t("human.role.appointments.t")}</h3>
+              <p dir="auto">{t("human.member.6.d")}</p>
             </article>
             <article>
               <b>07</b>
-              <h3>Social Media Manager</h3>
-              <p>Plans content, publishing and community engagement.</p>
+              <h3 dir="auto">{t("human.member.7.t")}</h3>
+              <p dir="auto">{t("human.member.7.d")}</p>
             </article>
             <article>
               <b>08</b>
-              <h3>Data &amp; Research Assistant</h3>
-              <p>
-                Supports research, CRM hygiene, data management and campaign
-                operations.
-              </p>
+              <h3 dir="auto">{t("human.member.8.t")}</h3>
+              <p dir="auto">{t("human.member.8.d")}</p>
             </article>
           </div>
         </div>
@@ -298,13 +270,17 @@ function HumanAgentsMain() {
       <section className="section pricing-human" id="plans">
         <div className="container">
           <div className="eyebrow">{t("human.plans.eyebrow")}</div>
-          <p className="lead">{t("human.plans.lead")}</p>
-          <p className="lead human-plans-sub">{t("human.plans.sub")}</p>
+          <p className="lead" dir="auto">
+            {t("human.plans.lead")}
+          </p>
+          <p className="lead human-plans-sub" dir="auto">
+            {t("human.plans.sub")}
+          </p>
           <div className="plan-grid human-plan-grid">
             <article className="plan-card">
               <div className="plan-top">
-                <h3 className="plan-tier">STARTER + HUMAN AGENTS</h3>
-                <span className="plan-level">Essential Team</span>
+                <h3 className="plan-tier">{t("human.plan.tier.starter")}</h3>
+                <span className="plan-level">{t("human.plan.level.starter")}</span>
               </div>
               <div className="plan-price">
                 <span>AED</span>
@@ -312,12 +288,12 @@ function HumanAgentsMain() {
                 <small>{t("home.plan.month")}</small>
               </div>
               <ul className="plan-list">
-                <li>{t("footer.salesOs")}</li>
-                <li>{t("human.role.growth")}</li>
-                <li>Performance Marketing</li>
-                <li>Design Support</li>
-                <li>CRM &amp; Automation</li>
-                <li>Monthly Optimization</li>
+                <li dir="auto">{t("human.plan.starter.1")}</li>
+                <li dir="auto">{t("human.plan.starter.2")}</li>
+                <li dir="auto">{t("human.plan.starter.3")}</li>
+                <li dir="auto">{t("human.plan.starter.4")}</li>
+                <li dir="auto">{t("human.plan.starter.5")}</li>
+                <li dir="auto">{t("human.plan.starter.6")}</li>
               </ul>
               <OpenConsultationButton className="btn plan-cta">
                 {t("cta.consultation")}
@@ -326,8 +302,8 @@ function HumanAgentsMain() {
             <article className="plan-card featured-plan">
               <div className="popular-badge">{t("home.plan.popular")}</div>
               <div className="plan-top">
-                <h3 className="plan-tier">PRO + HUMAN AGENTS</h3>
-                <span className="plan-level">Full Growth Team</span>
+                <h3 className="plan-tier">{t("human.plan.tier.pro")}</h3>
+                <span className="plan-level">{t("human.plan.level.pro")}</span>
               </div>
               <div className="plan-price">
                 <span>AED</span>
@@ -335,12 +311,12 @@ function HumanAgentsMain() {
                 <small>{t("home.plan.month")}</small>
               </div>
               <ul className="plan-list">
-                <li>Everything in Starter + Human Agents</li>
-                <li>SEO Specialist</li>
-                <li>Video Editing</li>
-                <li>Social Media Management</li>
-                <li>Appointment Support</li>
-                <li>Advanced Reporting</li>
+                <li dir="auto">{t("human.plan.pro.1")}</li>
+                <li dir="auto">{t("human.plan.pro.2")}</li>
+                <li dir="auto">{t("human.plan.pro.3")}</li>
+                <li dir="auto">{t("human.plan.pro.4")}</li>
+                <li dir="auto">{t("human.plan.pro.5")}</li>
+                <li dir="auto">{t("human.plan.pro.6")}</li>
               </ul>
               <OpenConsultationButton className="btn btn-light plan-cta">
                 {t("cta.consultation")}
@@ -348,8 +324,8 @@ function HumanAgentsMain() {
             </article>
             <article className="plan-card">
               <div className="plan-top">
-                <h3 className="plan-tier">ELITE + HUMAN AGENTS</h3>
-                <span className="plan-level">Scale Team</span>
+                <h3 className="plan-tier">{t("human.plan.tier.elite")}</h3>
+                <span className="plan-level">{t("human.plan.level.elite")}</span>
               </div>
               <div className="plan-price">
                 <span>AED</span>
@@ -357,12 +333,12 @@ function HumanAgentsMain() {
                 <small>{t("home.plan.month")}</small>
               </div>
               <ul className="plan-list">
-                <li>Everything in Pro + Human Agents</li>
-                <li>Higher Creative Capacity</li>
-                <li>AI Agents</li>
-                <li>Data &amp; Research Support</li>
-                <li>Advanced Automation</li>
-                <li>Priority Growth Management</li>
+                <li dir="auto">{t("human.plan.elite.1")}</li>
+                <li dir="auto">{t("human.plan.elite.2")}</li>
+                <li dir="auto">{t("human.plan.elite.3")}</li>
+                <li dir="auto">{t("human.plan.elite.4")}</li>
+                <li dir="auto">{t("human.plan.elite.5")}</li>
+                <li dir="auto">{t("human.plan.elite.6")}</li>
               </ul>
               <OpenConsultationButton className="btn plan-cta">
                 {t("cta.consultation")}

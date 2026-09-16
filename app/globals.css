@@ -7999,3 +7999,204 @@ a.feature-card.feature-link p,
   color: #e9d5ff !important;
   font-weight: 900 !important;
 }
+
+/* =========================================================
+   Arabic / RTL polish
+   ========================================================= */
+
+/* Arabic shaping breaks with letter-spacing / uppercase */
+html[lang="ar"] h1,
+html[lang="ar"] .h1,
+html[lang="ar"] h2,
+html[lang="ar"] .h2,
+html[lang="ar"] h3,
+html[lang="ar"] .h3,
+html[lang="ar"] .eyebrow,
+html[lang="ar"] .lead,
+html[lang="ar"] .section-lead,
+html[lang="ar"] .brand-name,
+html[lang="ar"] .brand-product,
+html[lang="ar"] .growth-core-card,
+html[lang="ar"] .growth-core-card strong,
+html[lang="ar"] .growth-core-card small,
+html[lang="ar"] .growth-core-card > span,
+html[lang="ar"] .plan-tier,
+html[lang="ar"] .plan-level,
+html[lang="ar"] .easy-option-kicker,
+html[lang="ar"] .hiring-builder-top > span,
+html[lang="ar"] p,
+html[lang="ar"] small,
+html[lang="ar"] span,
+html[lang="ar"] strong,
+html[lang="ar"] b,
+html[lang="ar"] li {
+  letter-spacing: 0 !important;
+}
+
+html[lang="ar"] .eyebrow,
+html[lang="ar"] .easy-option-kicker,
+html[lang="ar"] .hiring-builder-top > span,
+html[lang="ar"] .plan-tier,
+html[lang="ar"] .plan-level,
+html[lang="ar"] .popular-badge,
+html[lang="ar"] .growth-infra-section .eyebrow {
+  text-transform: none !important;
+}
+
+/* Keep Latin/number runs readable inside RTL pages */
+html[dir="rtl"] .ltr-safe,
+html[dir="rtl"] .chips,
+html[dir="rtl"] .handoff-promo-flow,
+html[dir="rtl"] .plan-price,
+html[dir="rtl"] .hiring-role > b,
+html[dir="rtl"] .salary-role-card > b,
+html[dir="rtl"] .table-wrap,
+html[dir="rtl"] .addon-cards {
+  direction: ltr;
+  unicode-bidi: isolate;
+  text-align: left;
+}
+
+/* Arabic (or auto-detected) copy should stay RTL */
+html[dir="rtl"] .rtl-safe,
+html[dir="rtl"] [dir="auto"] {
+  unicode-bidi: isolate;
+}
+
+html[dir="rtl"] .team-list span,
+html[dir="rtl"] .team-grid p,
+html[dir="rtl"] .team-grid h3,
+html[dir="rtl"] .growth-role-grid span,
+html[dir="rtl"] .hiring-role strong,
+html[dir="rtl"] .salary-role-card div strong,
+html[dir="rtl"] .plan-list li,
+html[dir="rtl"] .ai-human-head p,
+html[dir="rtl"] .handoff-promo-copy p,
+html[dir="rtl"] .handoff-promo-copy h3 {
+  unicode-bidi: isolate;
+  direction: auto;
+  text-align: start;
+}
+
+/* Plan checklist markers sit at the start edge in both dirs */
+.plan-list li {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-inline: var(--space-5) 0 !important;
+}
+
+.plan-list li::before {
+  left: auto !important;
+  right: auto !important;
+  inset-inline-start: 0 !important;
+}
+
+/* Hiring role cards: start-aligned content */
+html[dir="rtl"] .hiring-role {
+  text-align: right;
+}
+
+html[dir="rtl"] .salary-role-card div strong,
+html[dir="rtl"] .hiring-role strong {
+  text-align: right;
+}
+
+/* Handoff flow reads RTL */
+html[dir="rtl"] .handoff-promo-flow {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .handoff-promo-flow i {
+  transform: scaleX(-1);
+}
+
+html[dir="rtl"] .handoff-promo-shell {
+  direction: rtl;
+}
+
+html[dir="rtl"] .handoff-promo-shell > b {
+  direction: rtl;
+}
+
+/* AI + Human head stacks cleanly in RTL */
+html[dir="rtl"] .ai-human-head {
+  text-align: right;
+}
+
+html[dir="rtl"] .ai-human-head p {
+  text-align: right;
+}
+
+/* Don't force whole grid direction — it breaks Arabic h3 shaping with LTR chips */
+html[dir="rtl"] .ai-human-grid {
+  direction: rtl;
+}
+
+html[dir="rtl"] .ai-human-grid article {
+  direction: rtl;
+  unicode-bidi: isolate;
+}
+
+html[dir="rtl"] .ai-human-grid article h3,
+html[dir="rtl"] .ai-human-title,
+html[lang="ar"] .ai-human-grid article h3,
+html[lang="ar"] .ai-human-title {
+  direction: rtl !important;
+  unicode-bidi: isolate !important;
+  letter-spacing: normal !important;
+  text-align: right !important;
+  font-family: "Noto Sans Arabic", Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+  font-feature-settings: "liga" 1, "calt" 1 !important;
+  font-variant-ligatures: common-ligatures !important;
+}
+
+html[dir="rtl"] .ai-human-grid .chips,
+html[dir="rtl"] .chips {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+  justify-content: flex-end !important;
+  text-align: left !important;
+}
+
+/* Growth infra core card Arabic subtitle */
+html[dir="rtl"] .growth-core-card {
+  text-align: right;
+}
+
+html[dir="rtl"] .growth-core-card strong {
+  direction: rtl;
+  unicode-bidi: isolate;
+  text-align: right;
+  display: block;
+}
+
+html[dir="rtl"] .growth-core-card > span {
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: block;
+  text-align: right;
+}
+
+html[dir="rtl"] .growth-core-card small {
+  direction: rtl;
+  unicode-bidi: isolate;
+  display: block;
+  text-align: right;
+}
+
+html[dir="rtl"] .growth-role-grid {
+  direction: rtl;
+}
+
+/* Team sections */
+html[dir="rtl"] .team-list > div,
+html[dir="rtl"] .team-grid article {
+  text-align: right;
+}
+
+html[dir="rtl"] .text-link,
+html[dir="rtl"] .light-link,
+html[dir="rtl"] .human-promo-cta {
+  direction: rtl;
+  unicode-bidi: isolate;
+}
