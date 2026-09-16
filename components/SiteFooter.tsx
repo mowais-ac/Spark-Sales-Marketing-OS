@@ -1,11 +1,17 @@
+"use client";
+
 import Link from "next/link";
 import { OpenConsultationButton } from "./OpenConsultationButton";
+import { useLanguage } from "./LanguageContext";
+import type { MessageKey } from "@/lib/i18n/messages";
 
 type Props = {
-  description: string;
+  descriptionKey: MessageKey;
 };
 
-export function SiteFooter({ description }: Props) {
+export function SiteFooter({ descriptionKey }: Props) {
+  const { t } = useLanguage();
+
   return (
     <footer className="footer">
       <div className="container footer-grid">
@@ -15,31 +21,29 @@ export function SiteFooter({ description }: Props) {
             <img src="/spark-ai-mark.png" alt="" aria-hidden="true" />
             <strong>SPARK AI</strong>
             <span>|</span>
-            <b>SALES &amp; MARKETING OS</b>
+            <b>{t("brand.product")}</b>
           </div>
-          <p>{description}</p>
+          <p>{t(descriptionKey)}</p>
         </div>
         <div>
-          <strong>Platform</strong>
-          <Link href="/#platform-features">Features</Link>
-          <Link href="/#pricing">Pricing</Link>
+          <strong>{t("footer.platform")}</strong>
+          <Link href="/#platform-features">{t("footer.features")}</Link>
+          <Link href="/#pricing">{t("footer.pricing")}</Link>
         </div>
         <div>
-          <strong>Solutions</strong>
-          <Link href="/">Sales &amp; Marketing OS</Link>
-          <Link href="/ai-agent">AI Agent</Link>
-          <Link href="/human-agents">Human Agents</Link>
+          <strong>{t("footer.solutions")}</strong>
+          <Link href="/">{t("footer.salesOs")}</Link>
+          <Link href="/ai-agent">{t("footer.aiAgent")}</Link>
+          <Link href="/human-agents">{t("footer.humanAgents")}</Link>
         </div>
         <div>
-          <strong>Contact</strong>
-          <OpenConsultationButton>
-            Start Your Free Consultation
-          </OpenConsultationButton>
+          <strong>{t("footer.contact")}</strong>
+          <OpenConsultationButton>{t("cta.consultation")}</OpenConsultationButton>
         </div>
       </div>
       <div className="container footer-bottom">
-        <span>© 2026 Spark AI</span>
-        <span>Dubai, UAE</span>
+        <span>{t("footer.rights")}</span>
+        <span>{t("footer.location")}</span>
       </div>
     </footer>
   );

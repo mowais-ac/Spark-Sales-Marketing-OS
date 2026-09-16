@@ -1,58 +1,50 @@
 "use client";
 
 import { useState } from "react";
+import { useLanguage } from "@/components/LanguageContext";
+import type { MessageKey } from "@/lib/i18n/messages";
 
-const humanRoles = {
-  growth: [
-    "Growth Manager",
-    "Coordinates priorities, campaigns, specialists and funnel decisions around one customer journey.",
-  ],
-  performance: [
-    "Performance Marketer",
-    "Runs and optimizes paid acquisition with conversion tracking tied back to pipeline outcomes.",
-  ],
-  creative: [
-    "Creative Team",
-    "Builds ad creative, landing-page visuals, social assets and video content around campaign goals.",
-  ],
-  crm: [
-    "CRM & Automation Expert",
-    "Keeps routing, automations, pipelines and customer history structured inside the same operating system.",
-  ],
-  appointments: [
-    "Appointment Setter",
-    "Works with AI Agent and sales teams to move qualified opportunities toward meetings and follow-up.",
-  ],
-} as const;
-
-type RoleKey = keyof typeof humanRoles;
-
-const tabs: Array<{ key: RoleKey; label: string }> = [
-  { key: "growth", label: "Growth Manager" },
-  { key: "performance", label: "Performance" },
-  { key: "creative", label: "Creative" },
-  { key: "crm", label: "CRM" },
-  { key: "appointments", label: "Appointments" },
-];
+type RoleKey = "growth" | "performance" | "creative" | "crm" | "appointments";
 
 export function HumanRoleSpotlight() {
+  const { t } = useLanguage();
   const [role, setRole] = useState<RoleKey>("growth");
   const [bounceKey, setBounceKey] = useState<RoleKey | null>(null);
-  const [title, copy] = humanRoles[role];
+
+  const tabs: Array<{ key: RoleKey; label: MessageKey }> = [
+    { key: "growth", label: "human.role.growth" },
+    { key: "performance", label: "human.role.performance" },
+    { key: "creative", label: "human.role.creative" },
+    { key: "crm", label: "human.role.crm" },
+    { key: "appointments", label: "human.role.appointments" },
+  ];
+
+  const titles: Record<RoleKey, MessageKey> = {
+    growth: "human.role.growth",
+    performance: "human.role.performance.t",
+    creative: "human.role.creative.t",
+    crm: "human.role.crm.t",
+    appointments: "human.role.appointments.t",
+  };
+
+  const copies: Record<RoleKey, MessageKey> = {
+    growth: "human.role.growth.d",
+    performance: "human.role.performance.d",
+    creative: "human.role.creative.d",
+    crm: "human.role.crm.d",
+    appointments: "human.role.appointments.d",
+  };
 
   return (
     <div className="human-spotlight-shell interactive-surface motion-reveal">
       <div className="human-spotlight-copy">
-        <div className="eyebrow">Human Agents</div>
+        <div className="eyebrow">{t("human.spot.eyebrow")}</div>
         <h2 id="humanSpotlightTitle">
-          Software runs the system.
+          {t("human.spot.title.1")}
           <br />
-          People move the work forward.
+          {t("human.spot.title.2")}
         </h2>
-        <p className="section-lead">
-          Add specialists around your Sales &amp; Marketing OS without building
-          an in-house department.
-        </p>
+        <p className="section-lead">{t("human.spot.lead")}</p>
         <div className="human-role-tabs" role="tablist" aria-label="Human Agent roles">
           {tabs.map((tab) => (
             <button
@@ -69,31 +61,31 @@ export function HumanRoleSpotlight() {
                 requestAnimationFrame(() => setBounceKey(tab.key));
               }}
             >
-              {tab.label}
+              {t(tab.label)}
             </button>
           ))}
         </div>
         <div className="actions human-spotlight-actions">
           <a className="btn btn-primary human-promo-cta" href="#team">
-            Meet the Team
+            {t("human.spot.meet")}
           </a>
           <a className="text-link" href="#plans">
-            View Human Agent Plans →
+            {t("human.spot.viewPlans")}
           </a>
         </div>
       </div>
       <div className="human-role-preview interactive-surface" aria-live="polite">
         <div className="role-preview-top">
-          <span>ACTIVE HUMAN AGENT</span>
-          <b>LIVE WITH YOUR OS</b>
+          <span>{t("human.spot.active")}</span>
+          <b>{t("human.spot.live")}</b>
         </div>
         <div className="role-orbit" aria-hidden="true">
           <span />
           <i />
           <b />
         </div>
-        <strong>{title}</strong>
-        <p>{copy}</p>
+        <strong>{t(titles[role])}</strong>
+        <p>{t(copies[role])}</p>
         <div className="human-role-flow">
           <span>Plan</span>
           <i>→</i>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useLanguage } from "@/components/LanguageContext";
 
 const views = {
   overview: {
@@ -281,30 +282,38 @@ const stages = {
 type ViewKey = keyof typeof views;
 type StageKey = keyof typeof stages;
 
-const navItems: Array<{ key: ViewKey; label: string }> = [
-  { key: "overview", label: "Overview" },
-  { key: "leads", label: "Leads" },
-  { key: "inbox", label: "Inbox" },
-  { key: "pipeline", label: "Pipeline" },
-  { key: "campaigns", label: "Campaigns" },
-  { key: "automation", label: "Automation" },
-  { key: "appointments", label: "Appointments" },
-  { key: "reports", label: "Reports" },
-];
-
-const stageItems: Array<{ key: StageKey; num: string; label: string }> = [
-  { key: "attract", num: "01", label: "Attract" },
-  { key: "capture", num: "02", label: "Capture" },
-  { key: "convert", num: "03", label: "Convert" },
-  { key: "retain", num: "04", label: "Retain" },
-];
-
 export function DashboardDemo() {
+  const { t } = useLanguage();
   const [view, setView] = useState<ViewKey>("overview");
   const [stage, setStage] = useState<StageKey>("attract");
   const currentView = views[view];
   const currentStage = stages[stage];
   const canvas = useMemo(() => currentView.html, [currentView]);
+
+  const navItems: Array<{ key: ViewKey; label: string }> = [
+    { key: "overview", label: t("dash.overview") },
+    { key: "leads", label: t("dash.leads") },
+    { key: "inbox", label: t("dash.inbox") },
+    { key: "pipeline", label: t("dash.pipeline") },
+    { key: "campaigns", label: t("dash.campaigns") },
+    { key: "automation", label: t("dash.automation") },
+    { key: "appointments", label: t("dash.appointments") },
+    { key: "reports", label: t("dash.reports") },
+  ];
+
+  const stageItems: Array<{ key: StageKey; num: string; label: string }> = [
+    { key: "attract", num: "01", label: t("dash.attract") },
+    { key: "capture", num: "02", label: t("dash.capture") },
+    { key: "convert", num: "03", label: t("dash.convert") },
+    { key: "retain", num: "04", label: t("dash.retain") },
+  ];
+
+  const stageTitles = {
+    attract: t("dash.attract"),
+    capture: t("dash.capture"),
+    convert: t("dash.convert"),
+    retain: t("dash.retain"),
+  };
 
   return (
     <div className="dashboard-shell">
@@ -328,11 +337,11 @@ export function DashboardDemo() {
       <div className="dash-main">
         <div className="dash-top">
           <div>
-            <small>SALES & MARKETING OS</small>
+            <small>{t("dash.osLabel")}</small>
             <h3>{currentView.title}</h3>
             <p>{currentView.sub}</p>
           </div>
-          <span className="live-pill">LIVE SYSTEM</span>
+          <span className="live-pill">{t("dash.live")}</span>
         </div>
         <div className="dash-stage-row">
           {stageItems.map((item) => (
@@ -350,8 +359,8 @@ export function DashboardDemo() {
         <div className="dash-content">
           <div className="dash-canvas">{canvas}</div>
           <aside className="dash-inspector">
-            <span>WHAT YOU CONTROL</span>
-            <h4>{currentStage.title}</h4>
+            <span>{t("dash.control")}</span>
+            <h4>{stageTitles[stage]}</h4>
             <p>{currentStage.copy}</p>
             <ul>
               {currentStage.list.map((item) => (

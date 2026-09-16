@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useLanguage } from "@/components/LanguageContext";
 
 const roles = [
   { id: "ads", title: "Digital Advertising Specialist", salary: 7000, label: "AED 7.0K" },
@@ -14,6 +15,7 @@ const roles = [
 ];
 
 export function HiringCalculator() {
+  const { t } = useLanguage();
   const [selected, setSelected] = useState<Set<string>>(
     () => new Set(roles.map((role) => role.id))
   );
@@ -23,19 +25,21 @@ export function HiringCalculator() {
     const count = active.length;
     const total = active.reduce((sum, role) => sum + role.salary, 0);
     const pct = Math.max(0, Math.min(100, (count / 8) * 100));
-    let label = "Low";
-    if (count >= 6) label = "High";
-    else if (count >= 3) label = "Medium";
+    let labelKey: "human.hire.low" | "human.hire.medium" | "human.hire.high" =
+      "human.hire.low";
+    if (count >= 6) labelKey = "human.hire.high";
+    else if (count >= 3) labelKey = "human.hire.medium";
     return {
       count,
-      peopleLabel: `${count} ${count === 1 ? "person" : "people"}`,
+      peopleLabel: `${count} ${count === 1 ? t("human.hire.person") : t("human.hire.people")
+        }`,
       payroll: count
-        ? `≈ AED ${(total / 1000).toFixed(1)}K / month`
-        : "AED 0 / month",
+        ? `≈ AED ${(total / 1000).toFixed(1)}K ${t("home.plan.month")}`
+        : `AED 0 ${t("home.plan.month")}`,
       pct,
-      label,
+      labelKey,
     };
-  }, [selected]);
+  }, [selected, t]);
 
   const toggle = (id: string) => {
     setSelected((prev) => {
@@ -51,27 +55,19 @@ export function HiringCalculator() {
       <div className="container">
         <div className="hiring-stress-head">
           <div>
-            <div className="eyebrow">THE HIRING REALITY</div>
-            <h2 className="h2">
-              Eight hires. Eight salaries. Eight people to manage.
-            </h2>
-            <p className="section-lead">
-              Tap any role to see how quickly the hiring load adds up.
-            </p>
+            <div className="eyebrow">{t("human.hire.eyebrow")}</div>
+            <h2 className="h2">{t("human.hire.title")}</h2>
+            <p className="section-lead">{t("human.hire.lead")}</p>
           </div>
 
-          <div className="hiring-live-card" aria-live="polite">
-            <span>YOUR HIRING LOAD</span>
-            <strong>{stats.peopleLabel}</strong>
-            <b>{stats.payroll}</b>
-          </div>
+
         </div>
 
         <div className="hiring-stress-grid">
           <div className="hiring-team-builder">
             <div className="hiring-builder-top">
-              <span>BUILD THE TEAM YOURSELF</span>
-              <small>Click roles to add or remove them.</small>
+              <span>{t("human.hire.build")}</span>
+              <small>{t("human.hire.click")}</small>
             </div>
 
             <div className="salary-role-grid hiring-role-grid">
@@ -97,36 +93,42 @@ export function HiringCalculator() {
               })}
             </div>
 
-            <div className="hiring-stress-meter">
+            {/* <div className="hiring-stress-meter">
               <div className="hiring-meter-head">
-                <span>Management Load</span>
-                <b>{stats.label}</b>
+                <span>{t("human.hire.mgmt")}</span>
+                <b>{t(stats.labelKey)}</b>
               </div>
               <div className="hiring-meter-track">
                 <i style={{ width: `${stats.pct}%` }} />
               </div>
               <div className="hiring-stress-tags">
                 <span>
-                  <i className="fa-solid fa-user-plus" /> Recruit{" "}
+                  <i className="fa-solid fa-user-plus" /> {t("human.hire.recruit")}{" "}
                   <b>{stats.count}</b>
                 </span>
                 <span>
-                  <i className="fa-solid fa-clipboard-check" /> Onboard{" "}
+                  <i className="fa-solid fa-clipboard-check" /> {t("human.hire.onboard")}{" "}
                   <b>{stats.count}</b>
                 </span>
                 <span>
-                  <i className="fa-solid fa-calendar-days" /> Coordinate{" "}
+                  <i className="fa-solid fa-calendar-days" /> {t("human.hire.coordinate")}{" "}
                   <b>{stats.count}</b>
                 </span>
                 <span>
-                  <i className="fa-solid fa-wallet" /> Pay <b>{stats.count}</b>
+                  <i className="fa-solid fa-wallet" /> {t("human.hire.pay")}{" "}
+                  <b>{stats.count}</b>
                 </span>
               </div>
+            </div> */}
+            <div className="hiring-live-card" aria-live="polite">
+              <span>{t("human.hire.load")}</span>
+              <strong>{stats.peopleLabel}</strong>
+              <b>{stats.payroll}</b>
             </div>
           </div>
 
           <aside className="easy-option-card">
-            <span className="easy-option-kicker">THE EASIER OPTION</span>
+            <span className="easy-option-kicker">{t("human.hire.easy")}</span>
             <div className="easy-team-visual" aria-hidden="true">
               <span>
                 <i className="fa-solid fa-user" />
@@ -146,31 +148,28 @@ export function HiringCalculator() {
               </b>
             </div>
             <h3>
-              One coordinated team.
+              {t("human.hire.easyTitle.1")}
               <br />
-              One connected system.
+              {t("human.hire.easyTitle.2")}
             </h3>
             <div className="easy-price">
-              <small>STARTING FROM</small>
+              <small>{t("human.hire.from")}</small>
               <strong>AED 5K</strong>
-              <span>/ month</span>
+              <span>{t("home.plan.month")}</span>
             </div>
             <ul>
-              <li>Human specialists around the same OS</li>
-              <li>One Growth Manager coordinating execution</li>
-              <li>AI + human handoff in one customer journey</li>
-              <li>No need to build eight separate hires</li>
+              <li>{t("human.hire.easy.1")}</li>
+              <li>{t("human.hire.easy.2")}</li>
+              <li>{t("human.hire.easy.3")}</li>
+              <li>{t("human.hire.easy.4")}</li>
             </ul>
             <a className="btn btn-primary" href="#plans">
-              See Human Agent Plans
+              {t("human.hire.seePlans")}
             </a>
           </aside>
         </div>
 
-        <p className="salary-source-note">
-          Salary figures are indicative monthly comparisons only and vary by
-          experience, employer and role scope.
-        </p>
+        <p className="salary-source-note">{t("human.hire.note")}</p>
       </div>
     </section>
   );

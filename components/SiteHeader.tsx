@@ -3,48 +3,48 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
-
-type NavLink = { href: string; label: string };
+import { useLanguage } from "./LanguageContext";
+import type { MessageKey } from "@/lib/i18n/messages";
 
 type Props = {
   ctaHref: string;
-  ctaLabel: string;
+  ctaLabelKey: MessageKey;
   brandHref?: string;
-  navLinks?: NavLink[];
   sectionNav?: boolean;
 };
 
-const defaultNav: NavLink[] = [
-  { href: "/#platform", label: "Platform" },
-  { href: "/#solutions", label: "Solution" },
-  { href: "/#results", label: "Results" },
-  { href: "/#pricing", label: "Pricing" },
-];
-
-const homeSectionNav: NavLink[] = [
-  { href: "#platform", label: "Platform" },
-  { href: "#solutions", label: "Solution" },
-  { href: "#results", label: "Results" },
-  { href: "#pricing", label: "Pricing" },
-];
-
 export function SiteHeader({
   ctaHref,
-  ctaLabel,
+  ctaLabelKey,
   brandHref = "/",
-  navLinks,
   sectionNav = false,
 }: Props) {
+  const { locale, setLocale, t } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const navRef = useRef<HTMLElement>(null);
   const menuRef = useRef<HTMLButtonElement>(null);
   const pathname = usePathname();
-  const links = navLinks ?? (sectionNav ? homeSectionNav : defaultNav);
+
+  const homeSectionNav = [
+    { href: "#platform", label: t("nav.platform") },
+    { href: "#solutions", label: t("nav.solution") },
+    { href: "#results", label: t("nav.results") },
+    { href: "#pricing", label: t("nav.pricing") },
+  ];
+
+  const defaultNav = [
+    { href: "/#platform", label: t("nav.platform") },
+    { href: "/#solutions", label: t("nav.solution") },
+    { href: "/#results", label: t("nav.results") },
+    { href: "/#pricing", label: t("nav.pricing") },
+  ];
+
+  const links = sectionNav ? homeSectionNav : defaultNav;
 
   useEffect(() => {
     setMenuOpen(false);
-  }, [pathname]);
+  }, [pathname, locale]);
 
   useEffect(() => {
     const onDocClick = (event: MouseEvent) => {
@@ -83,7 +83,7 @@ export function SiteHeader({
 
     targets.forEach((target) => observer.observe(target));
     return () => observer.disconnect();
-  }, [sectionNav]);
+  }, [sectionNav, locale]);
 
   return (
     <header className="site-header" id="siteHeader">
@@ -91,7 +91,7 @@ export function SiteHeader({
         <Link
           className="brand-lockup"
           href={sectionNav ? "#top" : brandHref}
-          aria-label="Spark AI Sales & Marketing OS home"
+          aria-label={t("brand.homeAria")}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -102,7 +102,7 @@ export function SiteHeader({
           />
           <span className="brand-name">SPARK AI</span>
           <span className="brand-divider" aria-hidden="true" />
-          <span className="brand-product">SALES &amp; MARKETING OS</span>
+          <span className="brand-product">{t("brand.product")}</span>
         </Link>
         <nav
           className={`main-nav${menuOpen ? " mobile-open" : ""}`}
@@ -134,32 +134,30 @@ export function SiteHeader({
         <div className="nav-actions">
           <div className="language-switch" aria-label="Language selector">
             <button
-              className="lang-btn active"
+              className={`lang-btn${locale === "en" ? " active" : ""}`}
               type="button"
-              data-lang="en"
-              aria-pressed="true"
+              aria-pressed={locale === "en"}
+              onClick={() => setLocale("en")}
             >
               EN
             </button>
             <span aria-hidden="true">/</span>
             <button
-              className="lang-btn"
+              className={`lang-btn${locale === "ar" ? " active" : ""}`}
               type="button"
-              data-lang="ar"
-              disabled
-              aria-disabled="true"
-              title="Arabic version is being prepared"
+              aria-pressed={locale === "ar"}
+              onClick={() => setLocale("ar")}
             >
               AR
             </button>
           </div>
           <Link className="btn btn-primary nav-cta" href={ctaHref}>
-            {ctaLabel}
+            {t(ctaLabelKey)}
           </Link>
           <button
             className="menu-toggle"
             type="button"
-            aria-label="Open menu"
+            aria-label={t("nav.openMenu")}
             aria-expanded={menuOpen}
             aria-controls="mainNav"
             ref={menuRef}
