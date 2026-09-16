@@ -1,24 +1,28 @@
-# Spark AI Sales & Marketing OS — UI/UX QA Final
+# Spark AI — Sales & Marketing OS
 
-Primary routes:
-- `/` / `index.html` — Sales & Marketing OS
-- `ai-agent.html` — AI Agent
-- `human-agents.html` — Human Agents
+Next.js (App Router + TypeScript) marketing site with:
+- Sales & Marketing OS homepage
+- AI Agent page
+- Human Agents page
+- Interactive dashboard demos
+- Consultation modal + API route
+- WhatsApp fallback
+- Security headers and legacy URL redirects
 
-Run locally:
+## Local development
+
 ```bash
-npm start
+npm install
+npm run dev
 ```
-Then open `http://127.0.0.1:8787`.
 
-The design system is consolidated in `styles.css`. Consultation forms POST to `/api/consultation`.
+Open [http://localhost:3000](http://localhost:3000).
 
-## Vercel
+## Scripts
 
-Deploy from this `v7` directory using `npx vercel --prod`, or import a Git repository
-in Vercel and set its Root Directory to `v7` (if the repository contains the parent folder).
-The included configuration serves the HTML and assets without a build step.
+- `npm run dev` — development server
+- `npm run build` — production build
+- `npm run start` — serve production build
+- `npm run lint` — Next.js lint
 
-The local server saves consultation leads under `data/`. That storage is not used
-on Vercel. Until durable lead delivery is configured, the deployed API returns 503
-and the form offers its existing WhatsApp link; it does not claim to save a lead.
+For deployment instructions see `DEPLOY.md`.

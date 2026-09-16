@@ -1,4 +1,10 @@
+.env
+.env.local
+.env*.local
 node_modules/
+.next/
+out/
 .vercel/
-.env*
-data/
+.netlify/
+.DS_Store
+*.tsbuildinfo
