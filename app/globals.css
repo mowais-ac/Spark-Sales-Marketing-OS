@@ -8200,3 +8200,54 @@ html[dir="rtl"] .human-promo-cta {
   direction: rtl;
   unicode-bidi: isolate;
 }
+
+/* Full Spark AI wordmark logos in header/footer */
+.site-header .brand-logo {
+  display: block;
+  height: 40px !important;
+  width: auto !important;
+  max-width: min(220px, 48vw) !important;
+  object-fit: contain !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+.footer .footer-brand img {
+  display: block;
+  height: 36px !important;
+  width: auto !important;
+  max-width: 200px !important;
+  object-fit: contain !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+.footer .footer-brand strong {
+  display: none !important;
+}
+
+@media (max-width: 860px) {
+  .site-header .brand-logo {
+    height: 34px !important;
+    max-width: min(180px, 42vw) !important;
+  }
+
+  .footer .footer-brand img {
+    height: 30px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header .brand-logo {
+    height: 28px !important;
+    max-width: min(150px, 40vw) !important;
+  }
+
+  .site-header .brand-product {
+    display: none;
+  }
+
+  .site-header .brand-divider {
+    display: none;
+  }
+}

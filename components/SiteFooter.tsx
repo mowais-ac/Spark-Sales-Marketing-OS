@@ -18,8 +18,7 @@ export function SiteFooter({ descriptionKey }: Props) {
         <div>
           <div className="footer-brand">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/spark-ai-mark.png" alt="" aria-hidden="true" />
-            <strong>SPARK AI</strong>
+            <img src="/spark-ai-logo.png" alt="Spark AI" />
             <span>|</span>
             <b>{t("brand.product")}</b>
           </div>

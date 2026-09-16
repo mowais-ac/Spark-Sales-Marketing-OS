@@ -95,12 +95,10 @@ export function SiteHeader({
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            className="brand-mark"
-            src="/spark-ai-mark.png"
-            alt=""
-            aria-hidden="true"
+            className="brand-logo"
+            src="/spark-ai-logo-white.png"
+            alt="Spark AI"
           />
-          <span className="brand-name">SPARK AI</span>
           <span className="brand-divider" aria-hidden="true" />
           <span className="brand-product">{t("brand.product")}</span>
         </Link>
