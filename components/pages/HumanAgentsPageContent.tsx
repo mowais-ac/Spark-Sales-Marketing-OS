@@ -1,7 +1,7 @@
 "use client";
 
 import { PageShell } from "@/components/PageShell";
-import { OpenConsultationButton } from "@/components/OpenConsultationButton";
+import { OpenConsultationButton } from "@/components/OpenConsultationButton"; 
 import { HiringCalculator } from "@/components/human-agents/HiringCalculator";
 import { HumanRoleSpotlight } from "@/components/human-agents/HumanRoleSpotlight";
 import { useLanguage } from "@/components/LanguageContext";
