@@ -3,7 +3,7 @@
 import { useLanguage } from "@/components/LanguageContext";
 import type { MessageKey } from "@/lib/i18n/messages";
 
-const implementedItems: MessageKey[] = [
+const implementedItems: MessageKey[] = [ 
   "caseStudy.item.1",
   "caseStudy.item.2",
   "caseStudy.item.3",
