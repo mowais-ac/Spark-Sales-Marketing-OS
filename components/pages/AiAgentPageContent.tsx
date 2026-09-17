@@ -113,10 +113,14 @@ function AiAgentMain() {
               <p className="section-lead">{t("ai.promo.lead")}</p>
             </div>
             <div className="agent-human-roles">
-              <span>{t("human.role.growth")}</span>
-              <span>{t("human.role.performance")}</span>
-              <span>{t("human.role.crm")}</span>
-              <span>{t("human.role.appointments")}</span>
+              <span>{t("human.role.ads")}</span>
+              <span>{t("human.role.seo")}</span>
+              <span>{t("human.role.designFull")}</span>
+              <span>{t("human.role.video")}</span>
+              <span>{t("human.role.social")}</span>
+              <span>{t("human.role.crmExpert")}</span>
+              <span>{t("human.role.appointments.t")}</span>
+              <span>{t("human.role.dataAdmin")}</span>
             </div>
             <Link className="btn btn-primary human-promo-cta" href="/human-agents">
               {t("ai.promo.cta")}

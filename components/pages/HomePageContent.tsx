@@ -5,6 +5,7 @@ import { PageShell } from "@/components/PageShell";
 import { OpenConsultationButton } from "@/components/OpenConsultationButton";
 import { DashboardDemo } from "@/components/home/DashboardDemo";
 import { ResultsTimeline } from "@/components/home/ResultsTimeline";
+import { CaseStudySection } from "@/components/CaseStudySection";
 import { useLanguage } from "@/components/LanguageContext";
 
 export function HomePageContent() {
@@ -194,6 +195,8 @@ function HomeMain() {
           </div>
         </div>
       </section>
+
+      <CaseStudySection />
 
       <section className="journey section-space" id="journey">
         <div className="container">

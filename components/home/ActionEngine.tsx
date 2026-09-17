@@ -32,7 +32,7 @@ const engineData = {
     kicker: "MEETING TODAY",
     title: "Give the team the context before the call.",
     copy: "Customer history, source, notes and previous messages are already together, so the meeting starts with the right context.",
-    owner: "Growth Manager",
+    owner: "Digital Advertising Specialist",
     stage: "Appointment",
     action: "Prepare meeting",
   },

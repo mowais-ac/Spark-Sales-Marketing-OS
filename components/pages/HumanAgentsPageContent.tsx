@@ -1,8 +1,9 @@
 "use client";
 
 import { PageShell } from "@/components/PageShell";
-import { OpenConsultationButton } from "@/components/OpenConsultationButton"; 
+import { OpenConsultationButton } from "@/components/OpenConsultationButton";
 import { HiringCalculator } from "@/components/human-agents/HiringCalculator";
+import { CaseStudySection } from "@/components/CaseStudySection";
 import { useLanguage } from "@/components/LanguageContext";
 
 export function HumanAgentsPageContent() {
@@ -58,47 +59,35 @@ function HumanAgentsMain() {
             <div className="growth-role-grid">
               <div>
                 <b>01</b>
-                <span dir="auto">{t("footer.salesOs")}</span>
+                <span dir="auto">{t("human.role.ads")}</span>
               </div>
               <div>
                 <b>02</b>
-                <span dir="auto">{t("footer.aiAgent")}</span>
-              </div>
-              <div>
-                <b>03</b>
-                <span dir="auto">{t("human.role.growth")}</span>
-              </div>
-              <div>
-                <b>04</b>
-                <span dir="auto">{t("human.role.performance.t")}</span>
-              </div>
-              <div>
-                <b>05</b>
                 <span dir="auto">{t("human.role.seo")}</span>
               </div>
               <div>
-                <b>06</b>
-                <span dir="auto">{t("human.role.designer")}</span>
+                <b>03</b>
+                <span dir="auto">{t("human.role.designFull")}</span>
               </div>
               <div>
-                <b>07</b>
+                <b>04</b>
                 <span dir="auto">{t("human.role.video")}</span>
               </div>
               <div>
-                <b>08</b>
+                <b>05</b>
                 <span dir="auto">{t("human.role.social")}</span>
               </div>
               <div>
-                <b>09</b>
-                <span dir="auto">{t("human.role.appointments.t")}</span>
-              </div>
-              <div>
-                <b>10</b>
+                <b>06</b>
                 <span dir="auto">{t("human.role.crmExpert")}</span>
               </div>
               <div>
-                <b>11</b>
-                <span dir="auto">{t("human.role.data")}</span>
+                <b>07</b>
+                <span dir="auto">{t("human.role.appointments.t")}</span>
+              </div>
+              <div>
+                <b>08</b>
+                <span dir="auto">{t("human.role.dataAdmin")}</span>
               </div>
             </div>
           </div>
@@ -153,13 +142,15 @@ function HumanAgentsMain() {
         </div>
       </section>
 
+      <CaseStudySection />
+
       <section
         className="human-handoff-promo section-space compact-section"
         aria-label={t("human.handoff.title")}
       >
         <div className="container">
           <a
-            className="handoff-promo-shell interactive-surface motion-reveal"
+            className="handoff-promo-shell interactive-surface"
             href="#team"
           >
             <div className="handoff-promo-copy">
@@ -225,42 +216,42 @@ function HumanAgentsMain() {
           <div className="team-grid">
             <article>
               <b>01</b>
-              <h3 dir="auto">{t("human.member.1.t")}</h3>
+              <h3 dir="auto">{t("human.role.ads")}</h3>
               <p dir="auto">{t("human.member.1.d")}</p>
             </article>
             <article>
               <b>02</b>
-              <h3 dir="auto">{t("human.role.crm.t")}</h3>
-              <p dir="auto">{t("human.member.2.d")}</p>
+              <h3 dir="auto">{t("human.role.seo")}</h3>
+              <p dir="auto">{t("human.member.5.d")}</p>
             </article>
             <article>
               <b>03</b>
-              <h3 dir="auto">{t("human.member.3.t")}</h3>
+              <h3 dir="auto">{t("human.role.designFull")}</h3>
               <p dir="auto">{t("human.member.3.d")}</p>
             </article>
             <article>
               <b>04</b>
-              <h3 dir="auto">{t("human.member.4.t")}</h3>
+              <h3 dir="auto">{t("human.role.video")}</h3>
               <p dir="auto">{t("human.member.4.d")}</p>
             </article>
             <article>
               <b>05</b>
-              <h3 dir="auto">{t("human.member.5.t")}</h3>
-              <p dir="auto">{t("human.member.5.d")}</p>
+              <h3 dir="auto">{t("human.role.social")}</h3>
+              <p dir="auto">{t("human.member.7.d")}</p>
             </article>
             <article>
               <b>06</b>
+              <h3 dir="auto">{t("human.role.crmExpert")}</h3>
+              <p dir="auto">{t("human.member.2.d")}</p>
+            </article>
+            <article>
+              <b>07</b>
               <h3 dir="auto">{t("human.role.appointments.t")}</h3>
               <p dir="auto">{t("human.member.6.d")}</p>
             </article>
             <article>
-              <b>07</b>
-              <h3 dir="auto">{t("human.member.7.t")}</h3>
-              <p dir="auto">{t("human.member.7.d")}</p>
-            </article>
-            <article>
               <b>08</b>
-              <h3 dir="auto">{t("human.member.8.t")}</h3>
+              <h3 dir="auto">{t("human.role.dataAdmin")}</h3>
               <p dir="auto">{t("human.member.8.d")}</p>
             </article>
           </div>

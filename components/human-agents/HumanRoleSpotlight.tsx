@@ -4,36 +4,72 @@ import { useState } from "react";
 import { useLanguage } from "@/components/LanguageContext";
 import type { MessageKey } from "@/lib/i18n/messages";
 
-type RoleKey = "growth" | "performance" | "creative" | "crm" | "appointments";
+type RoleKey =
+  | "ads"
+  | "seo"
+  | "design"
+  | "video"
+  | "social"
+  | "crm"
+  | "appointments"
+  | "data";
+
+const tabs: Array<{ key: RoleKey; label: MessageKey; title: MessageKey; copy: MessageKey }> = [
+  {
+    key: "ads",
+    label: "human.role.ads.short",
+    title: "human.role.ads",
+    copy: "human.member.1.d",
+  },
+  {
+    key: "seo",
+    label: "human.role.seo.short",
+    title: "human.role.seo",
+    copy: "human.member.5.d",
+  },
+  {
+    key: "design",
+    label: "human.role.design.short",
+    title: "human.role.designFull",
+    copy: "human.member.3.d",
+  },
+  {
+    key: "video",
+    label: "human.role.video.short",
+    title: "human.role.video",
+    copy: "human.member.4.d",
+  },
+  {
+    key: "social",
+    label: "human.role.social.short",
+    title: "human.role.social",
+    copy: "human.member.7.d",
+  },
+  {
+    key: "crm",
+    label: "human.role.crm.short",
+    title: "human.role.crmExpert",
+    copy: "human.member.2.d",
+  },
+  {
+    key: "appointments",
+    label: "human.role.appointments.short",
+    title: "human.role.appointments.t",
+    copy: "human.member.6.d",
+  },
+  {
+    key: "data",
+    label: "human.role.data.short",
+    title: "human.role.dataAdmin",
+    copy: "human.member.8.d",
+  },
+];
 
 export function HumanRoleSpotlight() {
   const { t } = useLanguage();
-  const [role, setRole] = useState<RoleKey>("growth");
+  const [role, setRole] = useState<RoleKey>("ads");
   const [bounceKey, setBounceKey] = useState<RoleKey | null>(null);
-
-  const tabs: Array<{ key: RoleKey; label: MessageKey }> = [
-    { key: "growth", label: "human.role.growth" },
-    { key: "performance", label: "human.role.performance" },
-    { key: "creative", label: "human.role.creative" },
-    { key: "crm", label: "human.role.crm" },
-    { key: "appointments", label: "human.role.appointments" },
-  ];
-
-  const titles: Record<RoleKey, MessageKey> = {
-    growth: "human.role.growth",
-    performance: "human.role.performance.t",
-    creative: "human.role.creative.t",
-    crm: "human.role.crm.t",
-    appointments: "human.role.appointments.t",
-  };
-
-  const copies: Record<RoleKey, MessageKey> = {
-    growth: "human.role.growth.d",
-    performance: "human.role.performance.d",
-    creative: "human.role.creative.d",
-    crm: "human.role.crm.d",
-    appointments: "human.role.appointments.d",
-  };
+  const active = tabs.find((tab) => tab.key === role) ?? tabs[0];
 
   return (
     <div className="human-spotlight-shell interactive-surface motion-reveal">
@@ -84,8 +120,8 @@ export function HumanRoleSpotlight() {
           <i />
           <b />
         </div>
-        <strong>{t(titles[role])}</strong>
-        <p>{t(copies[role])}</p>
+        <strong>{t(active.title)}</strong>
+        <p>{t(active.copy)}</p>
         <div className="human-role-flow">
           <span>Plan</span>
           <i>→</i>

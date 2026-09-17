@@ -5,7 +5,7 @@ import { useEffect } from "react";
 export function PageEffects() {
   useEffect(() => {
     const revealTargets = document.querySelectorAll(
-      "section .section-intro, .human-spotlight-shell, .handoff-promo-shell, .human-pricing-teaser, .agent-human-shell, .dashboard-shell, .final-cta-box, .cta-box"
+      "section .section-intro, .human-spotlight-shell, .human-pricing-teaser, .agent-human-shell, .dashboard-shell, .final-cta-box, .cta-box"
     );
     revealTargets.forEach((el) => el.classList.add("motion-reveal"));
 
@@ -32,11 +32,20 @@ export function PageEffects() {
             observer?.unobserve(entry.target);
           });
         },
-        { threshold: 0.12, rootMargin: "0px 0px -6% 0px" }
+        { threshold: 0.08, rootMargin: "0px 0px -4% 0px" }
       );
       document
         .querySelectorAll(".motion-reveal, .motion-stagger")
-        .forEach((el) => observer?.observe(el));
+        .forEach((el) => {
+          const rect = el.getBoundingClientRect();
+          const inView =
+            rect.top < window.innerHeight * 0.96 && rect.bottom > 0;
+          if (inView) {
+            el.classList.add("is-visible");
+            return;
+          }
+          observer?.observe(el);
+        });
     } else {
       document
         .querySelectorAll(".motion-reveal, .motion-stagger")
