@@ -195,9 +195,10 @@ const en = {
     "Advanced AI agents and automation across the full sales journey.",
   "home.plan.elite.note": "Built for high-volume and multi-location teams.",
   "home.teaser.label": "NEED THE TEAM TOO?",
-  "home.teaser.title": "Add Human Agents to the platform.",
+  "home.teaser.title":
+    "Get the Sales & Marketing OS platform and a dedicated team of 8 specialists",
   "home.teaser.copy":
-    "Add strategy, campaigns, creative, CRM support and appointment setting around the same OS.",
+    "who manage your sales and marketing operations end to end.",
   "home.teaser.cta": "Compare Human Agent Plans",
   "home.teaser.plansAria": "Human Agents plan pricing",
   "home.addons.usage": "Usage & Add-On Charges",
@@ -736,9 +737,10 @@ const ar: Record<MessageKey, string> = {
     "وكلاء ذكاء اصطناعي وأتمتة متقدمة عبر رحلة المبيعات كاملة.",
   "home.plan.elite.note": "مصمم للأحجام العالية والمواقع المتعددة.",
   "home.teaser.label": "تحتاج الفريق أيضاً؟",
-  "home.teaser.title": "أضف الوكلاء البشريين إلى المنصة.",
+  "home.teaser.title":
+    "احصل على منصة نظام المبيعات والتسويق وفريقاً مخصصاً من 8 متخصصين",
   "home.teaser.copy":
-    "أضف الاستراتيجية والحملات والإبداع ودعم إدارة العملاء وتحديد المواعيد حول نفس النظام.",
+    "الذين يديرون عمليات المبيعات والتسويق من البداية إلى النهاية.",
   "home.teaser.cta": "قارن خطط الوكلاء البشريين",
   "home.teaser.plansAria": "أسعار خطط الوكلاء البشريين",
   "home.addons.usage": "رسوم الاستخدام والإضافات",

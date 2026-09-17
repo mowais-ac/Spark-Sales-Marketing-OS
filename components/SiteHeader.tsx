@@ -128,6 +128,13 @@ export function SiteHeader({
               </Link>
             )
           )}
+          <Link
+            className="btn btn-primary nav-cta-mobile"
+            href={ctaHref}
+            onClick={() => setMenuOpen(false)}
+          >
+            {t(ctaLabelKey)}
+          </Link>
         </nav>
         <div className="nav-actions">
           <div className="language-switch" aria-label="Language selector">

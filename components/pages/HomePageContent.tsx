@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { PageShell } from "@/components/PageShell";
 import { OpenConsultationButton } from "@/components/OpenConsultationButton";
-import { DashboardDemo } from "@/components/home/DashboardDemo"; 
+import { DashboardDemo } from "@/components/home/DashboardDemo";
 import { ResultsTimeline } from "@/components/home/ResultsTimeline";
 import { useLanguage } from "@/components/LanguageContext";
 

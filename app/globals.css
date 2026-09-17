@@ -8251,3 +8251,800 @@ html[dir="rtl"] .human-promo-cta {
     display: none;
   }
 }
+
+/* Mobile header: keep EN/AR + hamburger grouped on the right */
+@media (max-width: 1100px) {
+  .site-header .nav-shell {
+    justify-content: space-between !important;
+    gap: 12px !important;
+  }
+
+  .site-header .brand-lockup {
+    flex: 0 1 auto !important;
+    min-width: 0 !important;
+  }
+
+  .site-header .nav-actions {
+    margin-inline-start: auto !important;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+    flex: 0 0 auto !important;
+    gap: 6px !important;
+  }
+
+  .site-header .language-switch {
+    display: flex !important;
+    flex: none !important;
+  }
+
+  .site-header .nav-cta {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: none !important;
+    min-height: 36px !important;
+    height: 36px !important;
+    padding: 0 12px !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    white-space: nowrap !important;
+    border-radius: 10px !important;
+  }
+
+  .site-header .nav-cta-mobile {
+    display: none !important;
+  }
+
+  .site-header .main-nav.mobile-open .nav-cta-mobile {
+    display: inline-flex !important;
+    width: 100% !important;
+    margin-top: 10px !important;
+    min-height: 44px !important;
+    justify-content: center !important;
+  }
+
+  .site-header .menu-toggle {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: stretch !important;
+    flex: none !important;
+    width: 44px !important;
+    height: 44px !important;
+    padding: 12px !important;
+    background: #181818 !important;
+    border: 1px solid rgba(255, 255, 255, .18) !important;
+    border-radius: 10px !important;
+  }
+
+  .site-header .menu-toggle span {
+    display: block !important;
+    width: 100% !important;
+    height: 2px !important;
+    margin: 0 !important;
+    border-radius: 2px !important;
+    background: #ffffff !important;
+    opacity: 1 !important;
+  }
+
+  .site-header .menu-toggle span + span {
+    margin-top: 6px !important;
+  }
+}
+
+@media (max-width: 980px) {
+  .site-header .language-switch {
+    display: flex !important;
+  }
+}
+
+html[dir="rtl"] .site-header .nav-actions {
+  margin-inline-start: auto !important;
+  margin-right: auto !important;
+  margin-left: 0 !important;
+}
+
+html[dir="rtl"] .site-header .menu-toggle {
+  order: 0 !important;
+}
+
+/* =========================================================
+   Responsive: tighter section spacing site-wide
+   ========================================================= */
+@media (max-width: 980px) {
+  .section-space,
+  .section,
+  .final-cta,
+  .compact-section,
+  .subhero,
+  .human-hero,
+  .agent-hero {
+    padding-block: 56px !important;
+  }
+
+  .hero.section-space,
+  .hero {
+    padding-block: 48px 56px !important;
+  }
+
+  .section-intro,
+  .section-intro.wide,
+  .pricing-head,
+  .pricing-head-centered {
+    margin-bottom: 28px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .section-space,
+  .section,
+  .final-cta,
+  .compact-section,
+  .subhero,
+  .human-hero,
+  .agent-hero,
+  .hiring-stress-section,
+  .growth-team,
+  .pricing-human {
+    padding-block: 40px !important;
+  }
+
+  .hero.section-space,
+  .hero {
+    padding-block: 36px 44px !important;
+  }
+
+  .section-intro,
+  .section-intro.wide,
+  .section-intro.compact,
+  .pricing-head,
+  .pricing-head-centered,
+  .results-intro,
+  .platform-modules-intro {
+    margin-bottom: 20px !important;
+  }
+
+  .human-pricing-teaser {
+    margin-top: 24px !important;
+  }
+
+  .pricing-details,
+  .premium-details {
+    margin-top: 20px !important;
+  }
+
+  .final-cta-box,
+  .cta-box {
+    padding: 24px !important;
+  }
+
+  .footer {
+    padding-block: 40px 24px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-space,
+  .section,
+  .final-cta,
+  .compact-section,
+  .subhero,
+  .human-hero,
+  .agent-hero,
+  .hiring-stress-section,
+  .growth-team,
+  .pricing-human {
+    padding-block: 32px !important;
+  }
+
+  .hero.section-space,
+  .hero {
+    padding-block: 28px 36px !important;
+  }
+}
+
+/* =========================================================
+   Responsive: remove excess card min-heights + tighten padding
+   ========================================================= */
+@media (max-width: 980px) {
+  .dash-inspector,
+  .dash-canvas,
+  .journey-grid article,
+  .feature-card,
+  .result-card,
+  .plan-card,
+  .team-grid article,
+  .action-card,
+  .action-detail-panel,
+  .hire-list > div,
+  .growth-role-grid > div,
+  .compare-panel,
+  .before-card,
+  .after-card {
+    min-height: 0 !important;
+    height: auto !important;
+  }
+
+  .dash-inspector,
+  .dash-canvas {
+    padding: 16px !important;
+  }
+
+  .feature-card,
+  .journey-grid article,
+  .result-card,
+  .team-grid article {
+    padding: 18px !important;
+  }
+
+  .feature-card::after {
+    display: none !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .dashboard-shell {
+    min-height: 0 !important;
+  }
+
+  .dash-content {
+    gap: 12px !important;
+  }
+
+  .dash-inspector,
+  .dash-canvas {
+    min-height: 0 !important;
+    padding: 14px !important;
+  }
+
+  .dash-inspector ul {
+    margin: 8px 0 0 !important;
+    padding-left: 18px !important;
+  }
+
+  .dash-inspector h4 {
+    margin: 8px 0 6px !important;
+    font-size: 22px !important;
+  }
+
+  .dash-inspector p,
+  .dash-inspector li {
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+  }
+
+  .journey-grid,
+  .feature-grid,
+  .result-grid,
+  .team-grid,
+  .plan-grid,
+  .agent-cap-grid {
+    gap: 12px !important;
+  }
+
+  .journey-grid article,
+  .feature-card,
+  .result-card,
+  .plan-card,
+  .team-grid article,
+  .action-detail-panel,
+  .addon-cards > div,
+  .salary-role-card,
+  .hiring-role {
+    min-height: 0 !important;
+    padding: 16px !important;
+  }
+
+  .plan-card {
+    padding: 20px 16px !important;
+  }
+
+  .human-pricing-teaser {
+    padding: 18px !important;
+    gap: 16px !important;
+  }
+
+  .pricing-details details,
+  .premium-details details {
+    margin-top: 10px !important;
+  }
+
+  .pricing-details summary,
+  .premium-details summary {
+    padding: 14px 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .dash-inspector,
+  .dash-canvas,
+  .journey-grid article,
+  .feature-card,
+  .result-card,
+  .team-grid article {
+    padding: 14px !important;
+  }
+}
+
+/* =========================================================
+   Responsive only: center marketing text + CTAs
+   Desktop layout stays unchanged
+   ========================================================= */
+@media (max-width: 760px) {
+  .hero-copy,
+  .hero-copy h1,
+  .hero-copy p,
+  .hero-copy .eyebrow,
+  .hero-kicker,
+  .hero-lead,
+  .hero-proof,
+  .subhero,
+  .subhero .container,
+  .human-hero,
+  .human-hero .container,
+  .agent-hero,
+  .section-intro,
+  .section-intro.wide,
+  .section-intro.compact,
+  .pricing-head,
+  .pricing-head-centered,
+  .results-intro,
+  .platform-modules-intro,
+  .lead-banner-copy,
+  .ai-human-head,
+  .hiring-stress-head,
+  .growth-infra-section > .container > .eyebrow,
+  .growth-infra-section > .container > .h2,
+  .final-cta-box > div,
+  .cta-box > div,
+  .handoff-promo-copy {
+    text-align: center !important;
+    margin-inline: auto !important;
+  }
+
+  .hero-copy,
+  .section-intro,
+  .section-intro.wide,
+  .pricing-head,
+  .pricing-head-centered,
+  .lead-banner-copy,
+  .ai-human-head,
+  .hiring-stress-head > div {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .hero-copy h1,
+  .section-intro h2,
+  .pricing-head h2,
+  .subhero .h1,
+  .human-hero .h1,
+  .agent-hero h1,
+  .ai-human-head .h2,
+  .hiring-stress-head .h2 {
+    margin-inline: auto !important;
+    max-width: 100% !important;
+  }
+
+  .hero-copy .hero-cta,
+  .hero-copy .btn,
+  .actions,
+  .section-cta,
+  .final-cta-box,
+  .cta-box,
+  .human-spotlight-actions,
+  .pricing-head .actions {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .hero-copy .btn,
+  .actions .btn,
+  .section-cta,
+  .final-cta-box .btn,
+  .cta-box .btn,
+  .plan-cta,
+  .human-promo-cta,
+  .easy-option-card .btn {
+    margin-inline: auto !important;
+  }
+
+  .final-cta-box,
+  .cta-box,
+  .green-cta {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 18px !important;
+  }
+
+  .lead-banner-shell {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 16px !important;
+  }
+
+  .lead-banner-icons {
+    justify-content: center !important;
+  }
+
+  .ai-human-head {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+
+  .chips {
+    justify-content: center !important;
+  }
+
+  .human-pricing-teaser {
+    text-align: center !important;
+  }
+
+  .human-pricing-teaser > div:first-child {
+    text-align: center !important;
+  }
+
+  .human-price-pills {
+    justify-content: center !important;
+  }
+
+  .text-link,
+  .light-link {
+    display: inline-flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  /* Keep interactive / data UIs left-aligned */
+  .dashboard-shell,
+  .dashboard-shell *,
+  .consultation-panel,
+  .consultation-panel *,
+  .table-wrap,
+  .table-wrap *,
+  .form-grid,
+  .form-grid *,
+  .hiring-role,
+  .salary-role-card,
+  .plan-list,
+  .plan-list *,
+  .dash-inspector,
+  .dash-canvas,
+  .main-nav,
+  .site-header,
+  .footer-grid > div {
+    text-align: start !important;
+  }
+
+  .dashboard-shell .btn,
+  .consultation-panel .btn,
+  .plan-card .btn {
+    margin-inline: 0 !important;
+  }
+
+  .plan-card {
+    text-align: center !important;
+  }
+
+  .plan-card .plan-list,
+  .plan-card .plan-list li {
+    text-align: start !important;
+  }
+
+  .plan-card .plan-cta,
+  .plan-card .btn {
+    margin-inline: auto !important;
+  }
+}
+
+/* Nav CTA: hidden on desktop nav drawer; compact in mobile header */
+.nav-cta-mobile {
+  display: none !important;
+}
+
+@media (max-width: 980px) {
+  .site-header .nav-cta {
+    display: inline-flex !important;
+  }
+}
+
+@media (max-width: 560px) {
+  /* Keep compact CTA in the header on the smallest screens too */
+  .site-header .nav-cta {
+    display: inline-flex !important;
+    min-height: 32px !important;
+    height: 32px !important;
+    padding: 0 10px !important;
+    font-size: 10px !important;
+    max-width: 118px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .site-header .nav-actions {
+    gap: 4px !important;
+  }
+
+  .site-header .language-switch {
+    font-size: 9px !important;
+    gap: 2px !important;
+  }
+
+  .site-header .lang-btn {
+    min-width: 22px !important;
+    min-height: 28px !important;
+    padding: 0 !important;
+    font-size: 10px !important;
+  }
+
+  .site-header .menu-toggle {
+    width: 38px !important;
+    height: 38px !important;
+    padding: 10px !important;
+  }
+
+  .site-header .brand-logo {
+    height: 26px !important;
+    max-width: min(120px, 34vw) !important;
+  }
+}
+
+/* =========================================================
+   Mobile center polish — Human Agents + missed sections
+   Desktop unchanged
+   ========================================================= */
+@media (max-width: 760px) {
+  /* Section eyebrows / titles sitting directly in containers */
+  .human-agents-page .container > .eyebrow,
+  .human-agents-page .container > .h1,
+  .human-agents-page .container > .h2,
+  .human-agents-page .container > .lead,
+  .human-agents-page .container > p.lead,
+  .pricing-human .eyebrow,
+  .pricing-human .lead,
+  .pricing-human .human-plans-sub,
+  .soft-green .eyebrow,
+  .soft-green .h2,
+  .growth-team .eyebrow,
+  .growth-team h2,
+  .growth-team .section-lead,
+  .growth-grid > div:first-child,
+  .growth-infra-section .eyebrow,
+  .growth-infra-section .h2,
+  .hiring-stress-head,
+  .hiring-stress-head .eyebrow,
+  .hiring-stress-head .h2,
+  .hiring-stress-head .section-lead,
+  .salary-source-note,
+  .hiring-live-card,
+  .hiring-live-card > span,
+  .hiring-live-card strong,
+  .hiring-live-card b,
+  .ai-human-grid article,
+  .ai-human-grid article h3,
+  .ai-human-title,
+  .section > .container > .eyebrow,
+  .section > .container > .ai-human-head,
+  .handoff-promo-shell,
+  .handoff-promo-shell > b,
+  .handoff-promo-copy,
+  .handoff-promo-copy .eyebrow,
+  .handoff-promo-copy h3,
+  .handoff-promo-copy p,
+  .team-list > div,
+  .team-list strong,
+  .team-list span,
+  .easy-option-card,
+  .easy-option-card h3,
+  .easy-option-card p,
+  .easy-option-kicker {
+    text-align: center !important;
+  }
+
+  .growth-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .growth-grid > div:first-child {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .growth-team .text-link,
+  .growth-team .light-link,
+  .handoff-promo-shell > b {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin-inline: auto !important;
+  }
+
+  .handoff-promo-shell {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 16px !important;
+    text-align: center !important;
+  }
+
+  .handoff-promo-flow {
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .hiring-live-card {
+    text-align: center !important;
+  }
+
+  .salary-source-note {
+    text-align: center !important;
+    margin-inline: auto !important;
+    max-width: 36rem !important;
+  }
+
+  .ai-human-grid article h3,
+  .ai-human-title {
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .ai-human-grid .chips,
+  .chips {
+    justify-content: center !important;
+  }
+
+  .pricing-human .eyebrow,
+  .pricing-human .lead,
+  .pricing-human .human-plans-sub {
+    text-align: center !important;
+    margin-inline: auto !important;
+  }
+
+  .team-grid article {
+    text-align: center !important;
+  }
+
+  .team-grid article p {
+    text-align: center !important;
+  }
+
+  /* Keep role picker rows readable (icon + title + price) */
+  .hiring-role,
+  .salary-role-card,
+  .hiring-role strong,
+  .salary-role-card div strong {
+    text-align: start !important;
+  }
+
+  /* Override prior RTL right-align for these marketing blocks on mobile */
+  html[dir="rtl"] .ai-human-grid article h3,
+  html[dir="rtl"] .ai-human-title,
+  html[dir="rtl"] .handoff-promo-copy,
+  html[dir="rtl"] .handoff-promo-copy h3,
+  html[dir="rtl"] .handoff-promo-copy p,
+  html[dir="rtl"] .growth-team h2,
+  html[dir="rtl"] .growth-team .section-lead,
+  html[dir="rtl"] .pricing-human .lead,
+  html[dir="rtl"] .pricing-human .human-plans-sub {
+    text-align: center !important;
+  }
+}
+
+/* =========================================================
+   Mobile fixes: easy-option list, accordion wrap, footer center
+   ========================================================= */
+@media (max-width: 760px) {
+  /* Easy option checklist — centered column */
+  .easy-option-card {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .easy-option-card .easy-team-visual {
+    margin-inline: auto !important;
+  }
+
+  .easy-option-card .easy-price {
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .easy-option-card ul {
+    width: 100% !important;
+    max-width: 320px !important;
+    margin-inline: auto !important;
+  }
+
+  .easy-option-card li {
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    gap: 10px !important;
+    padding: 10px 0 !important;
+    text-align: left !important;
+  }
+
+  .easy-option-card li::before {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    flex: none !important;
+    margin-top: 1px !important;
+  }
+
+  .easy-option-card .btn {
+    width: 100% !important;
+    max-width: 320px !important;
+    margin-inline: auto !important;
+    justify-content: center !important;
+  }
+
+  /* Pricing accordion: stop "+" wrapping; stack on narrow screens */
+  .pricing-details summary,
+  .premium-details summary {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    text-align: center !important;
+  }
+
+  .pricing-details summary span,
+  .premium-details summary span {
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .pricing-details summary b,
+  .premium-details summary b {
+    white-space: nowrap !important;
+    flex: none !important;
+  }
+
+  /* Footer centered on mobile */
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+    text-align: center !important;
+  }
+
+  .footer-grid > div {
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .footer-brand {
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+  }
+
+  .footer-grid p {
+    max-width: 28rem !important;
+    margin-inline: auto !important;
+    text-align: center !important;
+  }
+
+  .footer-grid a,
+  .footer-grid button {
+    text-align: center !important;
+  }
+
+  .footer-bottom {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    text-align: center !important;
+  }
+}
