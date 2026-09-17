@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { PageShell } from "@/components/PageShell";
-import { OpenConsultationButton } from "@/components/OpenConsultationButton";
+import { OpenConsultationButton } from "@/components/OpenConsultationButton"; 
 import { DashboardDemo } from "@/components/home/DashboardDemo";
 import { ResultsTimeline } from "@/components/home/ResultsTimeline";
 import { CaseStudySection } from "@/components/CaseStudySection";
